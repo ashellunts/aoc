@@ -1,0 +1,36 @@
+{
+	"build": {
+		"args": {
+			"HOST_USER": "${localEnv:USER}"
+		},
+		"dockerfile": "Dockerfile"
+	},
+	"containerEnv": {
+		"DISPLAY": "${localEnv:DISPLAY}"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"betterthantomorrow.calva",
+				"pedrorgirardi.vscode-cljfmt",
+				"stiansivertsen.visualclojure",
+				"ms-python.python"
+			],
+			"settings": {
+				"editor.formatOnSave": false,
+				"editor.tabSize": 4
+			}
+		}
+	},
+	"mounts": [
+		"source=/home/${localEnv:USER}/g/aoc,target=/home/${localEnv:USER}/g/aoc,type=bind,consistency=cached"
+	],
+	"otherPortsAttributes": {
+		"onAutoForward": "ignore"
+	},
+	"runArgs": [
+		"--network=host"
+	],
+	"workspaceFolder": "/home/artur/g/aoc"
+}
