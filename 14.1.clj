@@ -15,7 +15,6 @@
     ))
 ))
 
-
 (def qlu (count (filter (fn [[x y]] (and (< x qw) (< y qh) )) robots)))
 (def qru (count (filter (fn [[x y]] (and (> x qw) (< y qh) )) robots)))
 (def qld (count (filter (fn [[x y]] (and (< x qw) (> y qh) )) robots)))
